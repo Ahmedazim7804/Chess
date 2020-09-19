@@ -3,3 +3,5 @@ Requirments -
   2. PyQt 5
 
 Warning - Don't Change Name Of Any File And Folder, This may break functionality of Program.
+
+The Icons are in svg Format (Ignore .png extension).
