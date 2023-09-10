@@ -1,7 +1,6 @@
-Requirments -
-  1. Python 3
-  2. PyQt5
+Usage :<br>
+`pip install -r requirements.txt`<br>
+`python chess.py`
 
-Note:- Don't Change Name Of Any File And Folder, They are hardcoded in program.
-
-The Icons are in svg Format (Ignore .png extension).
+![](https://i.imgur.com/sxlbM5l.png)
+![](https://i.imgur.com/NbUBShT.png)
