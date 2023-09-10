@@ -1,4 +1,4 @@
-import sys, pdb, copy,webbrowser
+import sys, copy, webbrowser
 from PyQt5 import QtWidgets as qtw
 from PyQt5 import QtCore as qtc
 from PyQt5 import QtGui as qtg
@@ -81,61 +81,61 @@ class MainWindow(qtw.QMainWindow):
         # Setting Piece to thier position
 
         for j, i in enumerate(self.lst[1], 0):
-            self.dict[i] = {'first_move': True, "piece": "pawn", "color": 0, "icon": "Icons\\pawn_black.png", 'index': (1, j)}
-            self.dict_index[(1, j)] = {'first_move': True, "piece": "pawn", "color": 0, "icon": "Icons\\pawn_black.png",
+            self.dict[i] = {'first_move': True, "piece": "pawn", "color": 0, "icon": "Icons\\pawn_black.svg", 'index': (1, j)}
+            self.dict_index[(1, j)] = {'first_move': True, "piece": "pawn", "color": 0, "icon": "Icons\\pawn_black.svg",
                                        'button': i}
 
         for j, i in enumerate(self.lst[6], 0):
-            self.dict[i] = {'first_move': True, "piece": "pawn", "color": 1, "icon": "Icons\\pawn_white.png", 'index': (6, j)}
-            self.dict_index[(6, j)] = {'first_move': True, "piece": "pawn", "color": 1, "icon": "Icons\\pawn_white.png",
+            self.dict[i] = {'first_move': True, "piece": "pawn", "color": 1, "icon": "Icons\\pawn_white.svg", 'index': (6, j)}
+            self.dict_index[(6, j)] = {'first_move': True, "piece": "pawn", "color": 1, "icon": "Icons\\pawn_white.svg",
                                        'button': i}
 
         # Rock
-        self.dict[self.lst[0][0]] = {"piece": "rock", "color": 0,'move' : 0, "icon": "Icons\\rock_black.png", 'index': (0, 0)}
-        self.dict_index[(0, 0)] = {"piece": "rock", "color": 0,'move' : 0,"icon": "Icons\\rock_black.png", 'button': self.lst[0][0]}
-        self.dict[self.lst[0][7]] = {"piece": "rock", "color": 0,'move' : 0, "icon": "Icons\\rock_black.png", 'index': (0, 7)}
-        self.dict_index[(0, 7)] = {"piece": "rock", "color": 0,'move' : 0, "icon": "Icons\\rock_black.png", 'button': self.lst[0][7]}
+        self.dict[self.lst[0][0]] = {"piece": "rock", "color": 0,'move' : 0, "icon": "Icons\\rock_black.svg", 'index': (0, 0)}
+        self.dict_index[(0, 0)] = {"piece": "rock", "color": 0,'move' : 0,"icon": "Icons\\rock_black.svg", 'button': self.lst[0][0]}
+        self.dict[self.lst[0][7]] = {"piece": "rock", "color": 0,'move' : 0, "icon": "Icons\\rock_black.svg", 'index': (0, 7)}
+        self.dict_index[(0, 7)] = {"piece": "rock", "color": 0,'move' : 0, "icon": "Icons\\rock_black.svg", 'button': self.lst[0][7]}
 
-        self.dict[self.lst[7][0]] = {"piece": "rock", "color": 1,'move' : 0, "icon": "Icons\\rock_white.png", 'index': (7, 0)}
-        self.dict_index[(7, 0)] = {"piece": "rock", "color": 1,'move' : 0, "icon": "Icons\\rock_white.png", 'button': self.lst[7][0]}
-        self.dict[self.lst[7][7]] = {"piece": "rock", "color": 1,'move' : 0, "icon": "Icons\\rock_white.png", 'index': (7, 7)}
-        self.dict_index[(7, 7)] = {"piece": "rock", "color": 1,'move' : 0, "icon": "Icons\\rock_white.png", 'button': self.lst[7][7]}
+        self.dict[self.lst[7][0]] = {"piece": "rock", "color": 1,'move' : 0, "icon": "Icons\\rock_white.svg", 'index': (7, 0)}
+        self.dict_index[(7, 0)] = {"piece": "rock", "color": 1,'move' : 0, "icon": "Icons\\rock_white.svg", 'button': self.lst[7][0]}
+        self.dict[self.lst[7][7]] = {"piece": "rock", "color": 1,'move' : 0, "icon": "Icons\\rock_white.svg", 'index': (7, 7)}
+        self.dict_index[(7, 7)] = {"piece": "rock", "color": 1,'move' : 0, "icon": "Icons\\rock_white.svg", 'button': self.lst[7][7]}
 
         # knight
-        self.dict[self.lst[0][1]] = {"piece": "knight", "color": 0, "icon": "Icons\\knight_black.png", 'index': (0, 1)}
-        self.dict_index[(0, 1)] = {"piece": "knight", "color": 0, "icon": "Icons\\knight_black.png", 'button': self.lst[0][1]}
-        self.dict[self.lst[0][6]] = {"piece": "knight", "color": 0, "icon": "Icons\\knight_black.png", 'index': (0, 6)}
-        self.dict_index[(0, 6)] = {"piece": "knight", "color": 0, "icon": "Icons\\knight_black.png", 'button': self.lst[0][6]}
+        self.dict[self.lst[0][1]] = {"piece": "knight", "color": 0, "icon": "Icons\\knight_black.svg", 'index': (0, 1)}
+        self.dict_index[(0, 1)] = {"piece": "knight", "color": 0, "icon": "Icons\\knight_black.svg", 'button': self.lst[0][1]}
+        self.dict[self.lst[0][6]] = {"piece": "knight", "color": 0, "icon": "Icons\\knight_black.svg", 'index': (0, 6)}
+        self.dict_index[(0, 6)] = {"piece": "knight", "color": 0, "icon": "Icons\\knight_black.svg", 'button': self.lst[0][6]}
 
-        self.dict[self.lst[7][1]] = {"piece": "knight", "color": 1, "icon": "Icons\\knight_white.png", 'index': (7, 1)}
-        self.dict_index[(7, 1)] = {"piece": "knight", "color": 1, "icon": "Icons\\knight_white.png", 'button': self.lst[7][1]}
-        self.dict[self.lst[7][6]] = {"piece": "knight", "color": 1, "icon": "Icons\\knight_white.png", 'index': (7, 6)}
-        self.dict_index[(7, 6)] = {"piece": "knight", "color": 1, "icon": "Icons\\knight_white.png", 'button': self.lst[7][6]}
+        self.dict[self.lst[7][1]] = {"piece": "knight", "color": 1, "icon": "Icons\\knight_white.svg", 'index': (7, 1)}
+        self.dict_index[(7, 1)] = {"piece": "knight", "color": 1, "icon": "Icons\\knight_white.svg", 'button': self.lst[7][1]}
+        self.dict[self.lst[7][6]] = {"piece": "knight", "color": 1, "icon": "Icons\\knight_white.svg", 'index': (7, 6)}
+        self.dict_index[(7, 6)] = {"piece": "knight", "color": 1, "icon": "Icons\\knight_white.svg", 'button': self.lst[7][6]}
 
         # Bishop
-        self.dict[self.lst[0][2]] = {"piece": "bishop", "color": 0, "icon": "Icons\\bishop_black.png", 'index': (0, 2)}
-        self.dict_index[(0, 2)] = {"piece": "bishop", "color": 0, "icon": "Icons\\bishop_black.png", 'button': self.lst[0][2]}
-        self.dict[self.lst[0][5]] = {"piece": "bishop", "color": 0, "icon": "Icons\\bishop_black.png", 'index': (0, 5)}
-        self.dict_index[(0, 5)] = {"piece": "bishop", "color": 0, "icon": "Icons\\bishop_black.png", 'button': self.lst[0][5]}
+        self.dict[self.lst[0][2]] = {"piece": "bishop", "color": 0, "icon": "Icons\\bishop_black.svg", 'index': (0, 2)}
+        self.dict_index[(0, 2)] = {"piece": "bishop", "color": 0, "icon": "Icons\\bishop_black.svg", 'button': self.lst[0][2]}
+        self.dict[self.lst[0][5]] = {"piece": "bishop", "color": 0, "icon": "Icons\\bishop_black.svg", 'index': (0, 5)}
+        self.dict_index[(0, 5)] = {"piece": "bishop", "color": 0, "icon": "Icons\\bishop_black.svg", 'button': self.lst[0][5]}
 
-        self.dict[self.lst[7][2]] = {"piece": "bishop", "color": 1, "icon": "Icons\\bishop_white.png", 'index': (7, 2)}
-        self.dict_index[(7, 2)] = {"piece": "bishop", "color": 1, "icon": "Icons\\bishop_white.png", 'button': self.lst[7][2]}
-        self.dict[self.lst[7][5]] = {"piece": "bishop", "color": 1, "icon": "Icons\\bishop_white.png", 'index': (7, 5)}
-        self.dict_index[(7, 5)] = {"piece": "bishop", "color": 1, "icon": "Icons\\bishop_white.png", 'button': self.lst[7][5]}
+        self.dict[self.lst[7][2]] = {"piece": "bishop", "color": 1, "icon": "Icons\\bishop_white.svg", 'index': (7, 2)}
+        self.dict_index[(7, 2)] = {"piece": "bishop", "color": 1, "icon": "Icons\\bishop_white.svg", 'button': self.lst[7][2]}
+        self.dict[self.lst[7][5]] = {"piece": "bishop", "color": 1, "icon": "Icons\\bishop_white.svg", 'index': (7, 5)}
+        self.dict_index[(7, 5)] = {"piece": "bishop", "color": 1, "icon": "Icons\\bishop_white.svg", 'button': self.lst[7][5]}
 
         # King
-        self.dict[self.lst[0][4]] = {"piece": "king", "color": 0,'move' : 0, "icon": "Icons\\king_black.png", 'index': (0, 4)}
-        self.dict_index[(0, 4)] = {"piece": "king", "color": 0,'move' : 0, "icon": "Icons\\king_black.png", 'button': self.lst[0][4]}
+        self.dict[self.lst[0][4]] = {"piece": "king", "color": 0,'move' : 0, "icon": "Icons\\king_black.svg", 'index': (0, 4)}
+        self.dict_index[(0, 4)] = {"piece": "king", "color": 0,'move' : 0, "icon": "Icons\\king_black.svg", 'button': self.lst[0][4]}
 
-        self.dict[self.lst[7][4]] = {"piece": "king", "color": 1,'move' : 0, "icon": "Icons\\king_white.png", 'index': (7, 4)}
-        self.dict_index[(7, 4)] = {"piece": "king", "color": 1,'move' : 0, "icon": "Icons\\king_white.png", 'button': self.lst[7][4]}
+        self.dict[self.lst[7][4]] = {"piece": "king", "color": 1,'move' : 0, "icon": "Icons\\king_white.svg", 'index': (7, 4)}
+        self.dict_index[(7, 4)] = {"piece": "king", "color": 1,'move' : 0, "icon": "Icons\\king_white.svg", 'button': self.lst[7][4]}
 
         # Queen
-        self.dict[self.lst[0][3]] = {"piece": "queen", "color": 0, "icon": "Icons\\queen_black.png", 'index': (0, 3)}
-        self.dict_index[(0, 3)] = {"piece": "queen", "color": 0, "icon": "Icons\\queen_black.png", 'button': self.lst[0][3]}
+        self.dict[self.lst[0][3]] = {"piece": "queen", "color": 0, "icon": "Icons\\queen_black.svg", 'index': (0, 3)}
+        self.dict_index[(0, 3)] = {"piece": "queen", "color": 0, "icon": "Icons\\queen_black.svg", 'button': self.lst[0][3]}
 
-        self.dict[self.lst[7][3]] = {"piece": "queen", "color": 1, "icon": "Icons\\queen_white.png", 'index': (7, 3)}
-        self.dict_index[(7, 3)] = {"piece": "queen", "color": 1, "icon": "Icons\\queen_white.png", 'button': self.lst[7][3]}
+        self.dict[self.lst[7][3]] = {"piece": "queen", "color": 1, "icon": "Icons\\queen_white.svg", 'index': (7, 3)}
+        self.dict_index[(7, 3)] = {"piece": "queen", "color": 1, "icon": "Icons\\queen_white.svg", 'button': self.lst[7][3]}
 
         for i in self.dict.keys():
             i.setIcon(qtg.QIcon(self.dict[i]['icon']))
@@ -564,32 +564,32 @@ class MainWindow(qtw.QMainWindow):
         self.dict[piece]['piece'] = name
         if name == 'queen':
             if color:
-                self.dict[piece]['icon'] = 'Icons\\queen_white.png'
-                self.dict_index[index]['icon'] = 'Icons\\queen_white.png'
+                self.dict[piece]['icon'] = 'Icons\\queen_white.svg'
+                self.dict_index[index]['icon'] = 'Icons\\queen_white.svg'
             elif not color:
-                self.dict[piece]['icon'] = 'Icons\\queen_black.png'
-                self.dict_index[index]['icon'] = 'Icons\\queen_black.png'
+                self.dict[piece]['icon'] = 'Icons\\queen_black.svg'
+                self.dict_index[index]['icon'] = 'Icons\\queen_black.svg'
         elif name == 'rock':
             if color:
-                self.dict[piece]['icon'] = 'Icons\\rock_white.png'
-                self.dict_index[index]['icon'] = 'Icons\\rock_white.png'
+                self.dict[piece]['icon'] = 'Icons\\rock_white.svg'
+                self.dict_index[index]['icon'] = 'Icons\\rock_white.svg'
             elif not color:
-                self.dict[piece]['icon'] = 'Icons\\rock_black.png'
-                self.dict_index[index]['icon'] = 'Icons\\rock_black.png'
+                self.dict[piece]['icon'] = 'Icons\\rock_black.svg'
+                self.dict_index[index]['icon'] = 'Icons\\rock_black.svg'
         elif name == 'knight':
             if color:
-                self.dict[piece]['icon'] = 'Icons\\knight_white.png'
-                self.dict_index[index]['icon'] = 'Icons\\knight_white.png'
+                self.dict[piece]['icon'] = 'Icons\\knight_white.svg'
+                self.dict_index[index]['icon'] = 'Icons\\knight_white.svg'
             elif not color:
-                self.dict[piece]['icon'] = 'Icons\\knight_black.png'
-                self.dict_index[index]['icon'] = 'Icons\\knight_black.png'
+                self.dict[piece]['icon'] = 'Icons\\knight_black.svg'
+                self.dict_index[index]['icon'] = 'Icons\\knight_black.svg'
         elif name == 'bishop':
             if color:
-                self.dict[piece]['icon'] = 'Icons\\bishop_white.png'
-                self.dict_index[index]['icon'] = 'Icons\\bishop_white.png'
+                self.dict[piece]['icon'] = 'Icons\\bishop_white.svg'
+                self.dict_index[index]['icon'] = 'Icons\\bishop_white.svg'
             elif not color:
-                self.dict[piece]['icon'] = 'Icons\\bishop_black.png'
-                self.dict_index[index]['icon'] = 'Icons\\bishop_black.png'
+                self.dict[piece]['icon'] = 'Icons\\bishop_black.svg'
+                self.dict_index[index]['icon'] = 'Icons\\bishop_black.svg'
         self.dict[piece].pop('first_move')
         self.dict_index[index].pop('first_move')
 
